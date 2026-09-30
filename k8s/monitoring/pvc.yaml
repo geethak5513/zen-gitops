@@ -3,8 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: grafana
   namespace: monitoring
-  annotations:
-    argocd.argoproj.io/sync-wave: "-2"
 spec:
   accessModes:
     - ReadWriteOnce
