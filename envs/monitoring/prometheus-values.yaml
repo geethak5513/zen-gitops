@@ -1,4 +1,5 @@
 grafana:
+  replicas: 0
   admin:
     existingSecret: grafana-admin
     userKey: admin-user
@@ -36,6 +37,7 @@ alertmanager:
       - name: default
 
   alertmanagerSpec:
+    replicas: 0
     storage:
       volumeClaimTemplate:
         spec:
@@ -48,6 +50,7 @@ alertmanager:
 
 prometheus:
   prometheusSpec:
+    replicas: 0
     retention: 15d
     retentionSize: 8GB
 
@@ -83,10 +86,10 @@ prometheusOperator:
       memory: 256Mi
 
 kubeStateMetrics:
-  enabled: true
+  enabled: false
 
 nodeExporter:
-  enabled: true
+  enabled: false
 
 defaultRules:
   create: true
