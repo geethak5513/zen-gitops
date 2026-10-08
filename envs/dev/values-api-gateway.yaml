@@ -9,7 +9,7 @@ service:
   port: 8080
   targetPort: 8080
 ingress:
-  enabled: true
+  enabled: false
   className: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -69,6 +69,5 @@ volumes:
     emptyDir: {}
 serviceAccount:
   create: true
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::873135413040:role/pharma-dev-eks-role
+  annotations: {}
   name: api-gateway
